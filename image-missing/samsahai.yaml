@@ -1,0 +1,34 @@
+report:
+  reportmock: true
+  slack:
+    channels:
+      - samsahai
+  rest:
+    componentUpgrade:
+      endpoints:
+        - url: http://httpbin.org/post
+          # template: ./analytics/component-upgrade-failure.tpl # if not define template, will send as json raw data
+    activePromotion:
+      endpoints:
+        - url: http://httpbin.org/post
+          # template: ./analytics/active-promotion.tpl
+
+components:
+  - name: redis
+    chart:
+      repository: https://kubernetes-charts.storage.googleapis.com
+      name: redis
+    image:
+      repository: bitnami/rediss
+      pattern: 'image-missing'
+    source: public-registry
+    values:
+      image:
+        repository: bitnami/rediss
+        pullPolicy: IfNotPresent
+      cluster:
+        enabled: false
+      usePassword: false
+      master:
+        persistence:
+          enabled: false
