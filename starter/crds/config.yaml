@@ -148,4 +148,4 @@ spec:
     # active environment will be applied when active promotion passed
     active:
       <component_name>:
-        - <values_file_url>s
+        - <values_file_url>
