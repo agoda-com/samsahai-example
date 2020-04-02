@@ -18,8 +18,3 @@ spec:
 
   credential:
     secretName: s2h-example-secret
-    git:
-      username:
-        key: gitUsername
-      password:
-        key: gitPassword
