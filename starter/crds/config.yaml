@@ -111,6 +111,7 @@ spec:
 
   # reporting flow configuration
   report:
+    # sending notfication via slack
     slack:
       # if you would like to specify your channel
       # please add our samsahai bot to your channel
@@ -127,6 +128,27 @@ spec:
         # use 'failure' for sending slack notification when component upgrade is failure only <default>
         # use 'both' for sending slack notification whether component upgrade is success or failure
         criteria: failure
+  
+    # sending notfication via Microsoft Teams 
+    msTeams:
+      groups:
+        # support both group name and group id
+        # in case there are duplicate group names, will use the first found group
+        - groupNameOrID: Samsahai
+          # support both channel name and channel id
+          channelNameOrIDs:
+            - Samsahai Dev 
+        componentUpgrade:  
+          # how often of sending component upgrade notification within a retry cycle
+          # use 'everytime' for sending ms teams notification in every component upgrade runs
+          # use 'retry' for sending ms teams notification after retry only <default>
+          interval: retry
+
+          # a criteria of sending component upgrade notification
+          # use 'success' for sending ms teams notification when component upgrade is success only
+          # use 'failure' for sending ms teams notification when component upgrade is failure only <default>
+          # use 'both' for sending ms teams notification whether component upgrade is success or failure
+          criteria: failure
 
   # values file urls of parent component per environment
   envs:
