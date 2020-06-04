@@ -43,6 +43,11 @@ spec:
 
   report:
     reportMock: true
+    
+  bundles:
+    db:
+      - redis
+      - mariadb
 
   components:
     - name: redis
