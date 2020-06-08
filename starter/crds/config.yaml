@@ -5,6 +5,13 @@ metadata:
   name: example
 spec:
 
+  # bundle of components which need to be verified in a same queue in staging environment
+  # can have multiple bundles
+  bundles:
+    # bundle name will be used as a queue name
+    <bundle_name1>:
+      - <service_name_or_dependencies_service_name>
+
   # what components do you want to verify?
   components:
     - name: <service_name>
