@@ -49,6 +49,10 @@ spec:
       - redis
       - mariadb
 
+  priorityQueues:
+    - redis
+    - wordpress
+
   components:
     - name: redis
       chart:

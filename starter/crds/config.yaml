@@ -12,6 +12,11 @@ spec:
     <bundle_name1>:
       - <service_name_or_dependencies_service_name>
 
+  # a list of bundles/components' name which needs to be prioritized
+  # the first one has the highest priority and the last one has the lowest priority
+  priorityQueues:
+    - <service_name_or_dependencies_service_or_bundle_name>
+      
   # what components do you want to verify?
   components:
     - name: <service_name>
