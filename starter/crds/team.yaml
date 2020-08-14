@@ -14,19 +14,6 @@ spec:
   owners:
     - <your_team_email>
 
-  # where is samsahai configuration?
-  gitStorage:
-    # git repository that stores your samsahai.yaml configuration
-    # it can be your git project repository
-    # but git project size should not be big
-    # as it will affect to git clone performance
-    url: <git_https>
-
-    # directory to samsahai.yaml configuration
-    # can be any name, but if you put it in our project
-    # it should be your team name
-    path: <directory_in_git_url_above>
-
   # how many resources for your namespace?
   resources: null
     # cpu: '4'
