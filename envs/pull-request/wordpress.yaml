@@ -1,0 +1,14 @@
+ingress:
+  enabled: true
+service:
+  type: NodePort
+persistence:
+  enabled: false
+mariadb:
+  enabled: true
+  master:
+    persistence:
+      enabled: false
+  replication:
+    enabled: false
+usePassword: false
