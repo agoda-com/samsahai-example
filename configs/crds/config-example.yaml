@@ -16,6 +16,9 @@ spec:
     active:
       redis:
         - https://raw.githubusercontent.com/agoda-com/samsahai/master/examples/envs/active/redis.yaml
+    pull-request:
+      redis:
+        - https://raw.githubusercontent.com/agoda-com/samsahai/master/envs/pull-request/redis.yaml
 
   staging:
     maxRetry: 3
@@ -27,14 +30,13 @@ spec:
         pollingTime: 5s
         testMock:
           result: true
-  
+
   pullRequest:
     concurrences: 2
     maxRetry: 2
     trigger:
       pollingTime: 1m
       maxRetry: 5
-
     deployment:
       timeout: 1h
       engine: helm3
@@ -43,7 +45,6 @@ spec:
         pollingTime: 5s
         testMock:
           result: true
-
     components:
       - name: redis
         image:
@@ -65,7 +66,7 @@ spec:
 
   report:
     reportMock: true
-    
+
   bundles:
     db:
       - redis
