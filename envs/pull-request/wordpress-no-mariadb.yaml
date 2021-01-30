@@ -5,7 +5,7 @@ service:
 persistence:
   enabled: false
 mariadb:
-  enabled: true
+  enabled: false
   master:
     persistence:
       enabled: false
