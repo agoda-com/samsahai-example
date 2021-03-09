@@ -1,0 +1,17 @@
+ingress:
+  enabled: true
+service:
+  type: NodePort
+persistence:
+  enabled: false
+mariadb:
+  enabled: true
+  image:
+    repository: bitnami/mariadb
+    tag: missing
+  master:
+    persistence:
+      enabled: false
+  replication:
+    enabled: false
+usePassword: false
