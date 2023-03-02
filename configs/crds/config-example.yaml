@@ -43,7 +43,7 @@ spec:
           - name: redis
             image:
               repository: bitnami/redis
-              pattern: '5.0.7-debian-9-r{{ .PRNumber }}'
+              pattern: "7.0.9-debian-11-r{{ .PRNumber }}"
             source: public-registry
         deployment:
           timeout: 1h
@@ -85,11 +85,11 @@ spec:
   components:
     - name: redis
       chart:
-        repository: https://charts.helm.sh/stable
+        repository: https://charts.bitnami.com/bitnami
         name: redis
       image:
-        repository: bitnami/redis
-        pattern: '5.*debian-9.*'
+        repository: docker.io/bitnami/redis
+        pattern: "7.*-debian-11.*"
       source: public-registry
       values:
         image:
@@ -103,15 +103,15 @@ spec:
             enabled: false
     - name: wordpress
       chart:
-        repository: https://charts.helm.sh/stable
+        repository: https://charts.bitnami.com/bitnami
         name: wordpress
       image:
-        repository: bitnami/wordpress
-        pattern: '5\.2.*debian-9.*'
+        repository: docker.io/bitnami/wordpress
+        pattern: "6.*-debian-11.*"
       source: public-registry
       dependencies:
         - name: mariadb
           image:
-            repository: bitnami/mariadb
-            pattern: '10\.3.*debian-9.*'
+            repository: docker.io/bitnami/mariadb
+            pattern: "10.*-debian-11.*"
           source: public-registry
